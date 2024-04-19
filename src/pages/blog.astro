@@ -1,4 +1,12 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+
+
+const pageTitle = "My Astro Learning Blog";
 
 ---
 
@@ -8,13 +16,12 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-		<h1>Blog</h1>
+		<Header/>
+
+		<h1>{pageTitle}</h1>
 		<h2>... and my new Astro site!</h2>
 
 		<p>
@@ -22,9 +29,14 @@
 			second page on my website, and it's the first one I built myself!
 		</p>
 
-		<p>
-			This site will update as I complete more of the tutorial, so keep
-			checking back and see how my journey is going!
-		</p>
+		<ul>
+			<li><a href="/posts/post-1/">Post 1</a></li>
+			<li><a href="/posts/post-2/">Post 2</a></li>
+			<li><a href="/posts/post-3/">Post 3</a></li>			
+		</ul>
+	    <Footer />
+		<script>
+			import "../scripts/menu.js";
+		  </script>
 	</body>
 </html>
